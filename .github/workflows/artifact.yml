@@ -1,0 +1,13 @@
+name: Artifact
+
+on: [push]
+
+env:
+  ARTIFACT_Name: myartifact
+  
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checks out the code.
+      uses: actions/checkout@v2

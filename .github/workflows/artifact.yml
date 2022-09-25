@@ -3,7 +3,7 @@ name: Artifact
 on: [push]
 
 env:
-  ARTIFACT_Name: myartifact
+  ARTIFACT_NAME: myartifact
   
 jobs:
   main:
@@ -11,3 +11,8 @@ jobs:
     steps:
     - name: Checks out the code.
       uses: actions/checkout@v2
+    - name: Uploads the artifact. 
+      uses: actions/upload-artifact@v2
+      with: 
+        name: ${{ env.ARTIFACT_NAME }}
+        Path: . 

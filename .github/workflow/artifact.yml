@@ -1,0 +1,21 @@
+name: Artifact
+
+on: [push]
+
+env:
+  ARTIFACT_NAME: myartifact
+
+job: 
+  main:
+    run-on: ubontu
+    steps:
+      - name: Checkout the code
+        run: actions/checkout@V2
+        
+      - name: Upload the artifact 
+        run: actions/upload-artifact@v2
+        with: 
+          name: ${{env.ARTIFACT_NAME}}
+          path: .
+        
+ 
